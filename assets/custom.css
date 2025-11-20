@@ -1,0 +1,17 @@
+/* Style form container */
+.gform_wrapper {
+    border: 2px solid #0073aa;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f7fbff;
+}
+
+/* Style submit button */
+button, input[type="submit"] {
+    background: #0073aa !important;
+    color: white !important;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
