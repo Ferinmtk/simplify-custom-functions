@@ -43,3 +43,23 @@ function simplify_message_above_form($form) {
         </div>';
     return $form;
 }
+
+// Send Gravity Forms data to Webhook.site after submission
+add_action('gform_after_submission', 'simplify_send_to_webhook', 10, 2);
+function simplify_send_to_webhook($entry, $form) {
+
+    $url = 'https://webhook.site/YOUR-UNIQUE-ID-HERE'; // Replace with your own link
+
+    $body = array(
+        'name'  => rgar($entry, '1'), // Field ID 1
+        'email' => rgar($entry, '2'), // Field ID 2
+        'phone' => rgar($entry, '3'), // Field ID 3
+        'message' => rgar($entry, '4') // Field ID 4
+    );
+
+    wp_remote_post($url, array(
+        'method' => 'POST',
+        'body'   => $body,
+        'timeout' => 30,
+    ));
+}
