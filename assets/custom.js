@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
         $(this).css('background', '');
     });
 
-    console.log("Simplify Custom Plugin JS Loaded and also Running");
+    console.log("Simplify Custom Plugin JS Loaded and Running");
     console.log("Plugin updated via GitHub Actions");
 
 });
