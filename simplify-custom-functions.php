@@ -48,13 +48,13 @@ function simplify_message_above_form($form) {
 add_action('gform_after_submission', 'simplify_send_to_webhook', 10, 2);
 function simplify_send_to_webhook($entry, $form) {
 
-    $url = 'https://webhook.site/YOUR-UNIQUE-ID-HERE'; // Replace with your own link
+    $url = 'https://webhook.site/8f82804d-8dc8-4b35-807e-664367d517ed';
 
     $body = array(
         'name'  => rgar($entry, '1'), // Field ID 1
         'email' => rgar($entry, '2'), // Field ID 2
-        'phone' => rgar($entry, '3'), // Field ID 3
-        'message' => rgar($entry, '4') // Field ID 4
+        'phone' => rgar($entry, '5'),
+        'Do you agree? Yes or No' => rgar($entry, '6')
     );
 
     wp_remote_post($url, array(
